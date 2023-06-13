@@ -44,8 +44,9 @@ sag_sayilar.append(len(df[df['DENEYİM'].isin(['YOK', 'ORTA'])]))
 sag_sayilar.append(len(df[df['GÖREV'].isin(['UZMAN', 'YÖNETİCİ'])]))
 sag_sayilar.append(len(df[df['GÖREV'].isin(['UZMAN', 'UZMAN'])]))
 
-
-
+print("sol taraftaki sayılar :",sag_sayilar,sag_sayilar)
+print("sağ taraftaki sayılar :",sag_sayilar)
+print('')
 # Hesaplanan örnek sayılarına göre tabloları oluştur
 sol_df = pd.DataFrame({
     'Bölünme': range(1, len(sol_sayilar) + 1),
@@ -124,7 +125,7 @@ sag_df = pd.DataFrame({
 })
 
 print("Sol Tablo:")
-print(sol_df)
+print(sol_df.to_string(index=False))
 
 print("\nSağ Tablo:")
-print(sag_df)
+print(sag_df.to_string(index=False))
